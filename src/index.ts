@@ -3,7 +3,7 @@ interface Env {
   PROMO_KV: KVNamespace;
 }
 
-import * as config from "../config.jsonc" assert { type: "json" };
+import * as config from "./config.json"
 
 
 
