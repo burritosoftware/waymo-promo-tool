@@ -1,7 +1,7 @@
 {
   "name": "waymo-promo",
   "main": "src/index.ts",
-  "compatibility_date": "2025-03-07",
+  "compatibility_date": "2025-02-04",
   "compatibility_flags": ["nodejs_compat"],
   "kv_namespaces": [
     {
