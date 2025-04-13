@@ -13,9 +13,6 @@
     "directory": "./public",
     "binding": "ASSETS"
   },
-  "routes": [
-    { "pattern": "waymo.burrito.software", "custom_domain": true }
-  ],
   "observability": {
     "enabled": true
   }
