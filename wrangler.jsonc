@@ -5,8 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "kv_namespaces": [
     {
-      "binding": "PROMO_KV",
-      "id": "fc13092f2afa43eb9312b61490f93ae9"
+      "binding": "PROMO_KV"
     }
   ],
   "assets": {
