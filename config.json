@@ -1,5 +1,5 @@
 {
-  "greeting": "Thanks for watching, here's my code!",
+  "greeting": "",
   "analyticsHeader": "",
-  "analyticsFooter": "<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"22add13d0b89447bbe442099c24dc61c\"}'></script><!-- End Cloudflare Web Analytics -->"
+  "analyticsFooter": ""
 }
