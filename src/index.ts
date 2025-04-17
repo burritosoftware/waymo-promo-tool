@@ -191,6 +191,14 @@ export default {
       if (territory) {
         return Response.redirect(new URL(`/${territory.path}`, request.url).toString(), 302);
       }
+
+
+      // if there's only one territory being able to be shown, redirect to that territory
+      const oneTerritory = territoryPromo.filter((t) => !config.hiddenServiceAreas.includes(t.path)).length === 1;
+      if (oneTerritory) {
+          return Response.redirect(new URL(`/${territoryPromo[0].path}`, request.url).toString(), 302);
+      }
+
       return Response.redirect(new URL("/choose", request.url).toString(), 302);
     }
 
@@ -268,6 +276,8 @@ export default {
 
 // 🎨 Generates the promo page HTML
 function generatePromoHTML(title: string, promoCode: string, activated: boolean, url: string): string {
+  const onlyOneTerritory = territoryPromo.filter((t) => !config.hiddenServiceAreas.includes(t.path)).length === 1;
+
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -289,7 +299,7 @@ function generatePromoHTML(title: string, promoCode: string, activated: boolean,
         <h3>${greeting}</h3>
         <h1>$10 off your first<br/>Waymo One ride</h1>
         <h3 style="margin-top: 10px">${title}</h3>
-        <p style="margin-top: 0">Wrong service area? <a class="back-link" href="/choose" style="text-decoration: none;">Choose another →</a></p>
+        ${!onlyOneTerritory && `<p style="margin-top: 0">Wrong service area? <a class="back-link" href="/choose" style="text-decoration: none;">Choose another →</a></p>`}
         ${!activated ? 
           `<p class="error-text">Code has been used up this month.\nTry again next month.</p>` 
         : 
