@@ -85,7 +85,7 @@ npx wrangler deploy
 
 ## Configuration
 ### Initial Setup
-[Visit this link to open the settings for your Cloudflare Worker](https://dash.cloudflare.com/?to=/:account/workers/services/view/:worker/production/settings). Under "Domains & Routes", copy the workers.dev domain, or set a custom one using the Add button. Keep the domain handy for configuration. It will be referred to as `<your domain>` in the documentation.
+[Visit this link to open the settings for your Cloudflare Worker](https://dash.cloudflare.com/?to=/:account/workers/services/view/:worker/production/settings). Under "Domains & Routes", copy the workers.dev domain, or set a custom one using the Add button. Keep the domain handy for configuration.
 
 Next, go to `https://<your_domain>/choose`. Choose a service area that you want to share codes for. Then, go back using the "Choose another" link and visit all other service areas you want to share. This will create KV pairs for the service areas in realtime.
 
