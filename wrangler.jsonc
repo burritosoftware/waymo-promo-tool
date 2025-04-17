@@ -4,9 +4,12 @@
   "compatibility_date": "2025-02-04",
   "compatibility_flags": ["nodejs_compat"],
   "kv_namespaces": [
+    // This is the KV namespace for the promo codes
+    // "Deploy to Cloudflare" button will automatically create a new KV namespace
+    // Change `id` if deploying manually
     {
       "binding": "PROMO_KV",
-      "id": "fc13092f2afa43eb9312b61490f93ae9"
+      "id": "b7f0e82638b3458ea55cde2a46f6ecb5"
     }
   ],
   "assets": {
