@@ -1,7 +1,7 @@
 {
-  "name": "waymo-promo",
+  "name": "waymo-promo-tool",
   "main": "src/index.ts",
-  "compatibility_date": "2025-03-07",
+  "compatibility_date": "2025-02-04",
   "compatibility_flags": ["nodejs_compat"],
   "kv_namespaces": [
     {
@@ -13,9 +13,6 @@
     "directory": "./public",
     "binding": "ASSETS"
   },
-  "routes": [
-    { "pattern": "waymo.burrito.software", "custom_domain": true }
-  ],
   "observability": {
     "enabled": true
   }
