@@ -2,7 +2,7 @@
 ![Icons](https://skillicons.dev/icons?i=cloudflare,workers,ts)
 
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/quacksire/waymo-promo-tool)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/burritosoftware/waymo-promo-tool)
 
 This Cloudflare Worker simplifies sharing Waymo "Refer and Earn" promo codes by **automatically presenting visitors with the correct code for their local service area**, leveraging the nearest Cloudflare colocation for privacy-friendly geolocation.
 
