@@ -227,7 +227,7 @@ export default {
 
     // If the promo code doesn't exist, create it with a default value
     if (!promoCodeExists) {
-      await env.PROMO_KV.put(promoKey, `https://waymo.smart.link/4pcoqniy5?code=SAMTW6GN`);
+      await env.PROMO_KV.put(promoKey, `https://waymo.smart.link/4pcoqniy5?code=CHANGE_KV`);
     }
     // If the activated key doesn't exist, create it with a default value
     if (!promoCodeActivated) {
