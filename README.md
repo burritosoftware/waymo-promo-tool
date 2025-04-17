@@ -11,6 +11,9 @@ This Cloudflare Worker simplifies sharing Waymo "Refer and Earn" promo codes by 
 Codes can be **dynamically updated** via KV storage without modifying the Worker directly, and a **deactivation notice can be configured** when monthly referral limits are reached.
 
 ## Screenshots
+> [!NOTE]  
+> For a live example, visit my personal instance at [waymo.burrito.software](https://waymo.burrito.software).
+
 |Service Area Picker|Code Box|
 |:-----------------:|:------:|
 |![ServiceAreaPicker](https://github.com/user-attachments/assets/1a8c5524-f272-436f-bce7-1dd3c3d7bbfe)|![StandardState](https://github.com/user-attachments/assets/e3d470d3-8665-41a1-abf3-54e296066ff3)|
@@ -18,8 +21,6 @@ Codes can be **dynamically updated** via KV storage without modifying the Worker
 |Code Copied|Code Deactivated|
 |:---------:|:--------------:|
 |![CodeCopied](https://github.com/user-attachments/assets/93420f6e-7ef8-413a-8ea6-5d7b32e264e4)|![CodeUsed](https://github.com/user-attachments/assets/186b1280-76cd-4e8b-b406-424f5a596e9c)|
-
-
 
 ## Features
 - 🌎 Supports **multiple service areas**
