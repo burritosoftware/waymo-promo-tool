@@ -9,5 +9,9 @@
     ],
     "categories": [],
     "dash": true
+  },
+  "scripts": {
+    "deploy": "npx wrangler deploy",
+    "dev": "npx wrangler dev"
   }
 }
