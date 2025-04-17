@@ -1,5 +1,7 @@
 {
   "greeting": "",
   "analyticsHeader": "",
-  "analyticsFooter": ""
+  "analyticsFooter": "",
+
+  "hiddenServiceAreas": ["sv"]
 }

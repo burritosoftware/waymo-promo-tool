@@ -207,6 +207,9 @@ export default {
 
     // 🎯 Determine territory and promo code
     const territory = territoryPromo.find((t) => url.pathname.startsWith(`/${t.path}`));
+
+
+
     if (territory) {
       // 🎯 Territory page
       promoKey = territory.promo;
@@ -217,10 +220,17 @@ export default {
       });
     }
 
+    // is territory hidden?
+    if (config.hiddenServiceAreas.includes(territory?.path)) {
+      return new Response(generateChooseHTML(), {
+        headers: { "Content-Type": "text/html" },
+      });
+    }
+
     /**
      * 2. Add the following key-value pairs:
-     *   - promo_la: "https://waymo.com/la?code=LA-XXXX"
-     *   - promo_la-activated: "false"
+     *   - promo_[sa]: "https://waymo.smart.link/4pcoqniy5?code=CHANGE_KV"
+     *   - promo_[sa]-activated: "true"
      */
 
     // 🔑 Check if promo code exists in KV
@@ -311,8 +321,11 @@ function generatePromoHTML(title: string, promoCode: string, activated: boolean,
 // 📍 Generates the choose location page
 function generateChooseHTML()  {
 
+
     const territoryPromoString = territoryPromo.map((t) => {
-        return `<a href="/${t.path}" class="big-button">${t.name}</a>`;
+          // config.hiddenServiceAreas is an array of strings with the names of the service areas to hide, by territoryPromo.path
+        // check if the territory is hidden, if so, skip it
+        if (!config.hiddenServiceAreas.includes(t.path)) return `<a href="/${t.path}" class="big-button">${t.name}</a>`;
     }
     ).join("");
 
