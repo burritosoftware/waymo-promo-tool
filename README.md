@@ -1,6 +1,8 @@
 # Waymo Promo Tool
 ## A hacked up, ChatGPT'd way of sharing referral codes for [Waymo One](https://waymo.com/waymo-one/) dynamically using Cloudflare Workers and KV.
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/quacksire/waymo-promo-tool)
+
 This worker allows you to easily share your referral code through a single page that has a button to copy your code and download the Waymo One app with your code attached to it. You can update it on the fly through Cloudflare KV, as well as set if it's deactivated.
 
 ## Screenshots
