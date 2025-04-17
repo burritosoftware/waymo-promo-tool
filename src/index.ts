@@ -3,12 +3,7 @@ interface Env {
   PROMO_KV: KVNamespace;
 }
 
-<<<<<<< HEAD
 import * as config from "../config.json" assert { type: "json" };
-
-
-
-
 
 /**
  * Territory Promo Codes
