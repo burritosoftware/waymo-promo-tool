@@ -281,6 +281,12 @@ function generatePromoHTML(title: string, promoCode: string, activated: boolean,
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:description" content="$10 off your first Waymo One ride!" />
+    <meta property="og:image" content="https://waymo.com/img/waymo-half-shot.png" />
+    <meta property="og:type" content="website" />
+    
+    
     <title>${title}</title>
     ${styles}
     ${analyticsHeader}
@@ -328,6 +334,7 @@ function generatePromoHTML(title: string, promoCode: string, activated: boolean,
 
 // 📍 Generates the choose location page
 function generateChooseHTML()  {
+  
   const territoryPromoString = territoryPromo.map((t) => {
         // config.hiddenServiceAreas is an array of strings with the names of the service areas to hide, by territoryPromo.path
         // check if the territory is hidden, if so, skip it
@@ -341,8 +348,15 @@ function generateChooseHTML()  {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Your Service Area</title>
+    
+    <meta property="og:description" content="$10 off your first Waymo One ride!" />
+    <meta property="og:image" content="https://waymo.com/img/waymo-half-shot.png" />
+    <meta property="og:type" content="website" />
+    
     ${styles}
     ${analyticsHeader}
+    
+    
   </head>
   <body>
     ${credit}
