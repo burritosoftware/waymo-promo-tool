@@ -191,6 +191,13 @@ export default {
       if (territory) {
         return Response.redirect(new URL(`/${territory.path}`, request.url).toString(), 302);
       }
+
+      // if there's only one territory being able to be shown, redirect to that territory
+      const oneTerritory = territoryPromo.filter((t) => !config.hiddenServiceAreas.includes(t.path)).length === 1;
+      if (oneTerritory) {
+        return Response.redirect(new URL(`/${territoryPromo[0].path}`, request.url).toString(), 302);
+      }
+
       return Response.redirect(new URL("/choose", request.url).toString(), 302);
     }
 
@@ -233,7 +240,7 @@ export default {
      *   - promo_[sa]-activated: "true"
      */
 
-    // 🔑 Check if promo code exists in KV
+        // 🔑 Check if promo code exists in KV
     const promoCodeExists = await env.PROMO_KV.get(promoKey) !== null;
     const promoCodeActivated = await env.PROMO_KV.get(`${promoKey}-activated`) !== null;
 
@@ -268,6 +275,7 @@ export default {
 
 // 🎨 Generates the promo page HTML
 function generatePromoHTML(title: string, promoCode: string, activated: boolean, url: string): string {
+  const onlyOneTerritory = territoryPromo.filter((t) => !config.hiddenServiceAreas.includes(t.path)).length === 1;
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -289,12 +297,12 @@ function generatePromoHTML(title: string, promoCode: string, activated: boolean,
         <h3>${greeting}</h3>
         <h1>$10 off your first<br/>Waymo One ride</h1>
         <h3 style="margin-top: 10px">${title}</h3>
-        <p style="margin-top: 0">Wrong service area? <a class="back-link" href="/choose" style="text-decoration: none;">Choose another →</a></p>
-        ${!activated ? 
-          `<p class="error-text">Code has been used up this month.\nTry again next month.</p>` 
-        : 
-          "<p id=\"copiedText\">Code copied!</p>"
-        }
+        ${!onlyOneTerritory && `<p style="margin-top: 0">Wrong service area? <a class="back-link" href="/choose" style="text-decoration: none;">Choose another →</a></p>`}
+        ${!activated ?
+      `<p class="error-text">Code has been used up this month.\nTry again next month.</p>`
+      :
+      "<p id=\"copiedText\">Code copied!</p>"
+  }
         <div id="codeBox" class="code-box ${!activated ? "error" : ""}">
           <input type="text" id="promoCode" value="${promoCode}" readonly
             style="border: none; background: none; width: 100%; font-size: 1.5rem;">
@@ -326,12 +334,13 @@ function generatePromoHTML(title: string, promoCode: string, activated: boolean,
 
 // 📍 Generates the choose location page
 function generateChooseHTML()  {
-    const territoryPromoString = territoryPromo.map((t) => {
-          // config.hiddenServiceAreas is an array of strings with the names of the service areas to hide, by territoryPromo.path
+  
+  const territoryPromoString = territoryPromo.map((t) => {
+        // config.hiddenServiceAreas is an array of strings with the names of the service areas to hide, by territoryPromo.path
         // check if the territory is hidden, if so, skip it
         if (!config.hiddenServiceAreas.includes(t.path)) return `<a href="/${t.path}" class="big-button">${t.name}</a>`;
-    }
-    ).join("");
+      }
+  ).join("");
 
   return `<!DOCTYPE html>
   <html lang="en">
