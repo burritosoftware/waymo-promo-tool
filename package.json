@@ -1,17 +1,1 @@
-{
-  "name": "waymo-promo-tool",
-  "description": "hi",
-  "cloudflare": {
-    "label": "Waymo Promo Tool",
-    "products": [
-      "Workers",
-      "KV"
-    ],
-    "categories": [],
-    "dash": true
-  },
-  "scripts": {
-    "deploy": "npx wrangler deploy",
-    "dev": "npx wrangler dev"
-  }
-}
+
