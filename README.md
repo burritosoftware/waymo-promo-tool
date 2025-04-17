@@ -32,7 +32,7 @@ Use this button to deploy this Cloudflare Worker. Cloudflare will automatically 
 > [!TIP]
 > #### Recommended Settings to Adjust
 > - Git account (where to clone)
-> - [x] Create private Git repository  
+> - - [x] Create private Git repository  
 
 Press `Create and deploy` once you've configured your desired deployment settings.
 
@@ -125,9 +125,9 @@ Access KV settings by [visiting this link](https://dash.cloudflare.com/?to=/:acc
     - Default: `true`
 
 ## Future Roadmap
-[x] Support multiple service areas  
-[ ] iOS Shortcut to update promo code URLs using Workers KV API and Share Sheet
+- [x] Support multiple service areas  
+- [ ] iOS Shortcut to update promo code URLs using Workers KV API and Share Sheet
 
 ## Notice
-This tool is unofficial, and not developed by Waymo. Waymo is a trademark of Waymo LLC. I am not affiliated with Waymo in any capacity.
+This tool is unofficial, and not developed by Waymo. Waymo and Waymo One are trademarks of Waymo LLC. I am not affiliated with Waymo in any capacity. With the exception of Waymo's car image in `public/waymo-half-shot.png`, this code is in the public domain under the Unlicense.
 
