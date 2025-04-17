@@ -1,4 +1,7 @@
 {
   "name": "waymo-promo-tool",
-  "description": "Share Waymo \"Refer and earn\" codes dynamically"
+  "description": "Share Waymo \"Refer and earn\" codes dynamically",
+  "scripts": {
+    "dev": "npx wrangler dev"
+  }
 }
